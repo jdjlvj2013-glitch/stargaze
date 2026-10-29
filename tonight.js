@@ -8,7 +8,7 @@ const SHOWERS=[ // [name, peak month(1-12), day, ZHR, radiant/parent, active ran
  ['Northern Taurids',11,12,5,'Taurus · Comet Encke (fireballs)','Oct 20 – Dec 10'],['Leonids',11,17,15,'Leo · Comet Tempel–Tuttle','Nov 6 – 30'],
  ['Geminids',12,14,150,'Gemini · asteroid 3200 Phaethon','Dec 4 – 20'],['Ursids',12,22,10,'Ursa Minor · Comet Tuttle','Dec 17 – 26']];
 const PL=['Mercury','Venus','Mars','Jupiter','Saturn','Uranus','Neptune'];
-const ICON={Mercury:'☿',Venus:'♀',Mars:'♂',Jupiter:'♃',Saturn:'♄',Uranus:'⛢',Neptune:'♆'};
+const ICON={Mercury:'',Venus:'',Mars:'',Jupiter:'',Saturn:'🪐',Uranus:'',Neptune:''};
 const COL={Mercury:'#5b5048',Venus:'#6b5a33',Mars:'#6b2f22',Jupiter:'#5e4a30',Saturn:'#5e5030',Uranus:'#2a5560',Neptune:'#26386b'};
 let tle=null,clouds=null,cloudKey='';
 async function getTLE(){

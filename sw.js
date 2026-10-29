@@ -1,4 +1,4 @@
-const V='stargaze-v1';
+const V='stargaze-v2';
 const CORE=['./','index.html','style.css','app.js','sky.js','tonight.js','facts.js','data.js','manifest.webmanifest','lib/astronomy.browser.min.js','lib/satellite.min.js','lib/model-viewer.min.js','icons/icon-192.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(CORE)));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==V).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});

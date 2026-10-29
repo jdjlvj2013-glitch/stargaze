@@ -7,11 +7,14 @@
 <header class=top><div class=brand>✦ <span>Stargaze</span></div><button class=chip id=locChip>📍 West Monroe</button></header>
 
 <section id=v-sky class="view on">
+  <video id=camVid playsinline muted autoplay webkit-playsinline></video>
   <canvas id=sky></canvas>
   <div class=hud id=hud>Facing N · 30° up</div>
   <div class=skybtns>
     <button class=chip id=sensorBtn>🧭 Point phone</button>
     <button class=chip id=timeBtn title="Time">🕒 Now</button>
+    <button class=chip id=camBtn>📷 See-through</button>
+    <label class="chip fov" id=fovBox hidden>Lens <input id=fovIn type=range min=40 max=95 step=1 value=65> <output id=fovOut>65°</output></label>
   </div>
   <div class="glass card hidden" id=card>
     <div class=cardhead><div><h2 id=cTitle></h2><div class=sub id=cSub></div></div><button class=x id=cClose>✕</button></div>
@@ -26,7 +29,7 @@
   </model-viewer>
   <div class="glass panel">
     <div class=pick id=pick>
-      <button data-m=saturn class=a>♄ Saturn</button><button data-m=jupiter>♃ Jupiter</button><button data-m=mars>♂ Mars</button><button data-m=moon>☾ Moon</button><button data-m=solar_system>☉ Solar system</button>
+      <button data-m=saturn class=a>Saturn</button><button data-m=jupiter>Jupiter</button><button data-m=mars>Mars</button><button data-m=moon>Moon</button><button data-m=solar_system>Solar system</button>
     </div>
     <h3 id=mTitle></h3><p id=mText></p>
     <p class=fine id=arNote></p>
@@ -38,7 +41,7 @@
 <nav class=nav>
   <button data-v=sky class=on><b>✦</b>Sky</button>
   <button data-v=home><b>◎</b>Bring Home</button>
-  <button data-v=tonight><b>☾</b>Tonight</button>
+  <button data-v=tonight><b>🌙</b>Tonight</button>
 </nav>
 <script src="lib/astronomy.browser.min.js"></script>
 <script src="lib/satellite.min.js"></script>
