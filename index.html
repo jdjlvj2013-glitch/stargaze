@@ -1,0 +1,51 @@
+<!doctype html><html lang=en><head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name=theme-color content="#05060f"><title>Stargaze</title>
+<link rel=manifest href="manifest.webmanifest"><link rel=icon href="icons/icon-192.png"><link rel=apple-touch-icon href="icons/icon-192.png">
+<link rel=stylesheet href="style.css">
+</head><body>
+<header class=top><div class=brand>✦ <span>Stargaze</span></div><button class=chip id=locChip>📍 West Monroe</button></header>
+
+<section id=v-sky class="view on">
+  <canvas id=sky></canvas>
+  <div class=hud id=hud>Facing N · 30° up</div>
+  <div class=skybtns>
+    <button class=chip id=sensorBtn>🧭 Point phone</button>
+    <button class=chip id=timeBtn title="Time">🕒 Now</button>
+  </div>
+  <div class="glass card hidden" id=card>
+    <div class=cardhead><div><h2 id=cTitle></h2><div class=sub id=cSub></div></div><button class=x id=cClose>✕</button></div>
+    <div class=tabs id=cTabs><button data-t=sailors class=a>⚓ Sailors</button><button data-t=myth>🏛 Myth</button><button data-t=science>🔭 Science</button></div>
+    <p id=cText></p><div class=facts id=cFacts></div>
+  </div>
+</section>
+
+<section id=v-home class=view>
+  <model-viewer id=mv src="models/saturn.glb" alt="3D Saturn" ar ar-modes="webxr scene-viewer quick-look" ar-scale=auto camera-controls touch-action=pan-y auto-rotate rotation-per-second=12deg shadow-intensity=1 exposure=1.1 environment-image=neutral>
+    <button slot=ar-button class=arbtn>◎ View in your room</button>
+  </model-viewer>
+  <div class="glass panel">
+    <div class=pick id=pick>
+      <button data-m=saturn class=a>♄ Saturn</button><button data-m=jupiter>♃ Jupiter</button><button data-m=mars>♂ Mars</button><button data-m=moon>☾ Moon</button><button data-m=solar_system>☉ Solar system</button>
+    </div>
+    <h3 id=mTitle></h3><p id=mText></p>
+    <p class=fine id=arNote></p>
+  </div>
+</section>
+
+<section id=v-tonight class=view><div class=scroll id=tonight><div class=loading>Computing tonight's sky…</div></div></section>
+
+<nav class=nav>
+  <button data-v=sky class=on><b>✦</b>Sky</button>
+  <button data-v=home><b>◎</b>Bring Home</button>
+  <button data-v=tonight><b>☾</b>Tonight</button>
+</nav>
+<script src="lib/astronomy.browser.min.js"></script>
+<script src="lib/satellite.min.js"></script>
+<script src="data.js"></script>
+<script src="facts.js"></script>
+<script src="app.js"></script>
+<script src="sky.js"></script>
+<script src="tonight.js"></script>
+<script type=module src="lib/model-viewer.min.js"></script>
+</body></html>
